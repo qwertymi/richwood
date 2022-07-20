@@ -1,21 +1,24 @@
 @charset 'utf-8';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-ul, li{
+
+ul,
+li {
   list-style: none;
 }
+
 img {
   vertical-align: middle;
   border: 0;
 }
 
 a {
-  color: #777;
+  color: #000;
   text-decoration: none;
 }
 
@@ -24,12 +27,13 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans KR','Montserrat', sans-serif;
+  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.55px;
   font-style: normal;
+  padding-top: 130px;
 }
 
 /* 공통 */
@@ -49,32 +53,978 @@ body {
   margin: 0 auto;
 }
 
-/* 헤더 */
-.header{
 
+
+.title {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  padding-bottom: 65px;
 }
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  display: block;
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.header .inner {
+  position: relative;
+  display: block;
+  height: 130px;
+}
+
+.logo {
+  display: inline-block;
+  width: 244px;
+  height: 36px;
+  background: url('../images/logo.png') no-repeat center;
+  background-size: cover;
+  margin: 47px 0;
+}
+
+.gnb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: block;
+}
+
+.mainmenu {
+  float: left;
+}
+
+.mainmenu>li {
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.mainmenu>li>a {
+  /* position: relative; */
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  height: 130px;
+  line-height: 130px;
+  padding: 0 25px;
+}
+
+.mainmenu>li>a::after {
+  content: '';
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
+.submenu {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #000;
+  padding: 25px 15px 35px 15px;
+  font-weight: 500;
+
+  display: none;
+  transition: all 0.7s;
+}
+
+.mainmenu>li:hover .submenu {
+  display: block;
+}
+
+.mainmenu>li:hover ::after {
+  background-color: #bbb;
+}
+
+.submenu li {}
+
+.submenu li a {
+  display: block;
+  padding: 6px 20px;
+  background-color: #000;
+  color: #bbb;
+  font-size: 16px;
+}
+
+
+.top-icon {
+  float: right;
+  margin-left: 38px;
+}
+
+.top-icon>li {
+  float: left;
+  position: relative;
+}
+
+.top-search {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url('../images/sear.png') no-repeat center;
+  background-size: cover;
+  margin: 54px 0px;
+  margin-right: 30px;
+}
+
+.top-lang {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url('../images/lang.png') no-repeat center;
+  background-size: cover;
+  margin: 54px 0px;
+}
+
+.top-lang::after {
+  content: '';
+  position: absolute;
+  top: 225%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.7s;
+}
+
+.top-icon li:hover ::after {
+  background-color: #bbb;
+}
+
+.top-icon>li:hover .icon-submenu {
+  display: block;
+}
+
+.icon-submenu {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-submenu li a {
+  font-weight: 700;
+  font-family: 'Montserrat';
+}
+
 
 /* 비주얼 */
-.visual{
-
+.visual {
+  display: block;
+  width: 100vw;
+  height: 664px;
 }
+
+.sw-visual .swiper-wrapper .swiper-slide {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 664px;
+}
+
+.vs-txt {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  margin: auto 0;
+}
+
+.vs-txt h2 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 72px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  line-height: 1.1;
+
+  margin-bottom: 30px;
+}
+
+.vs-txt p {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+
+  margin-bottom: 60px;
+}
+
+.vs-txt a {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.vs-txt a span {
+  position: relative;
+  width: auto;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+
+.vs-txt span::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: width .2s;
+}
+
+.vs-txt span::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width .2s;
+  transition-delay: 200ms;
+}
+
+.vs-txt a:hover ::after {
+  width: 0%;
+}
+
+.vs-txt a:hover ::before {
+  width: 100%;
+  transition-delay: 200ms;
+}
+
+.vs-slide-1 video{
+  width: 100vw;
+}
+
+.vs-slide-2 {
+  background: url('../images/visual-4.jpeg') no-repeat center;
+  background-size: 100vw;
+}
+
+.vs-slide-3 {
+  background: url('../images/visual-2.jpeg') no-repeat center;
+  background-size: 100vw;
+}
+
+.vs-slide-4 {
+  background: url('../images/visual-1.jpeg') no-repeat center;
+  background-size: 100vw;
+}
+
+
+.vs-prev {
+  position: absolute;
+  top: -5px;
+  left: -50px;
+  cursor: pointer;
+}
+
+.vs-pg {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 7.2%;
+
+  z-index: 9;
+}
+
+.swiper-pagination-bullet-active {
+  display: block;
+  border-radius: 5px !important;
+  width: 28px;
+  height: 6px;
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  border-radius: 0;
+  width: 28px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, .7);
+  margin: 4px;
+}
+
+.vs-next {
+  position: absolute;
+  top: -5px;
+  right: -50px;
+  cursor: pointer;
+}
+
+
 /* 회사소식 */
-.notice{
-
+.notice {
+  position: relative;
+  display: block;
 }
+
+.notice .inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 120px 0;
+}
+
+.notice-title {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  padding-bottom: 65px;
+}
+
+.notice-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #000;
+  border-radius: 60px;
+
+  transition: all 1s;
+}
+
+.notice-box .material-symbols-outlined {
+  position: absolute;
+  right: 3.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 43px;
+}
+
+.notice-box::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 18px;
+  background-color: #ddd;
+  position: absolute;
+  left: 17%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notice-swiper {}
+
+.notice-box-txt {}
+
+.notice-box-txt a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 40px 5%;
+}
+
+.notice-box-txt span {
+  display: inline-block;
+  width: 10%;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.notice-box-txt p {
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 7%;
+  color: #000;
+}
+
+.notice-box:hover {
+  background-color: #000;
+}
+
+.notice-box:hover span,
+.notice-box:hover p {
+  color: #fff;
+}
+
+.notice-swiper-control {
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  font-size: 22px;
+  font-family: 'Montserrat';
+}
+
+.notice-prev {
+  position: absolute;
+  top: -5px;
+  left: -50px;
+  cursor: pointer;
+}
+
+.notice-pg {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.notice-next {
+  position: absolute;
+  top: -5px;
+  right: -50px;
+  cursor: pointer;
+}
+
+
 /* 회사사업 */
-.business{
-
+.business {
+  background: #f9f9f9;
+  padding: 120px 0;
 }
+
+.business .inner {}
+
+.bs-1 {}
+
+.bs-2 {
+  display: none;
+}
+
+.bs-top {
+  position: relative;
+  display: block;
+  padding-top: 35px;
+}
+
+.bs-title {
+  position: relative;
+  display: inline-block;
+  font-size: 56px;
+  color: #ccc;
+  font-weight: bold;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.bs-title::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.bs-txt {
+  font-size: 18px;
+}
+
+.bs-more {
+  display: inline-block;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  border: 3px solid #ddd;
+  padding: 15px 35px;
+  margin: 30px 0;
+}
+
+.bs-bottom {}
+
+.bs-bottom-red {}
+
+
+.bs-bottom-red li {
+  position: relative;
+  float: left;
+  display: block;
+  width: 361px;
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 32px;
+}
+
+.bs-bottom-red li:nth-child(4n) {
+  margin-right: 0px;
+}
+
+.bs-bottom-red li a {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.bs-bottom-red li div {
+  width: 361px;
+  height: 361px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.bs-bottom-red li img {
+  transition: all 0.5s;
+}
+
+.bs-bottom-red li:hover img {
+  transform: scale(104%);
+}
+
+.bs-bottom-red li span {
+  line-height: 361px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 42px;
+  color: #d60000;
+}
+
+.bs-innertxt {
+  position: absolute;
+  bottom: 88px;
+  left: 30px;
+  text-align: left;
+  font-size: 22px;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+
 /* 제품검색 */
-.search{
+.search {}
+
+.search .inner {
+  padding: 120px 0 190px 0;
+}
+
+.search-wrap {
+  position: relative;
+  height: 90px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-cate {
+  width: 15%;
+  height: 100%;
+  margin-right: 1.5%;
+  border: 3px solid #ddd;
+  border-radius: 48px;
+  float: left;
+}
+
+.search-cate-input {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  margin-right: 0.5%;
+  background-color: #f4f4f4;
+  border-radius: 48px 0 0 48px;
+  float: left;
+}
+
+.search-cate-input input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-cate-input input::placeholder {
+  color: #999;
+  letter-spacing: -1.5px;
+}
+
+.search-cate-input input:focus {
+  outline: none;
+  color: #000;
+  font-weight: normal;
+}
+
+.search-cate-submit {
+  cursor: pointer;
+  width: 13%;
+  height: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -1.5px;
+  background-color: #000;
+  border-radius: 0 48px 48px 0;
+  float: right;
+  padding-right: 1.4%;
+}
+
+.search-hashtag {
+  position: absolute;
+  left: 20%;
+  bottom: -70%;
 
 }
+
+.search-hashtag li {
+  float: left;
+  margin-right: 20px;
+
+}
+
+.search-hashtag li a {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  transition: color .2s;
+}
+
+.search-hashtag li a:hover {
+  color: #000;
+}
+
+.search-hashtag li:nth-child(1) a {
+  color: #000;
+  font-weight: bold;
+}
+
 /* 뉴스/sns */
-.news{
-
+.news {
+  background-color: #f9f9f9;
 }
+
+.news .inner {
+  position: relative;
+  padding: 120px 0;
+}
+
+.title-en {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  padding-bottom: 40px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.news-more {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color: #bbb;
+  transition: color 0.4s;
+}
+
+.news-more span {
+  vertical-align: bottom;
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.news-more:hover {
+  color: #000;
+}
+
+.news-left {
+  float: left;
+  position: relative;
+  display: block;
+}
+
+
+.news-box {
+  float: left;
+  width: 361px;
+  margin-right: 30px;
+}
+
+.news-box a {
+  display: block;
+}
+
+.news-box-img {
+  overflow: hidden;
+}
+.news-box-img img{
+  transition: all 0.5s;
+}
+
+.news-box a:hover .news-box-img>img{
+  transform: scale(105%);
+}
+.news-box-title {
+  font-size: 22px;
+  font-weight: bold;
+  display: block;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.news-box-txt {
+  display: block;
+  height: 60px;
+  color: #666;
+}
+
+.news-box span {
+  display: block;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  font-weight: 600;
+  color: #bbb;
+  letter-spacing: .6px;
+  margin-top: 35px;
+}
+
+
+.news-right {
+  float: right;
+  position: relative;
+  display: block;
+  width: 23.5%;
+}
+
+.sns-round {
+  display: block;
+  width: 361px;
+  height: 361px;
+  border-radius: 50%;
+  background: #000 url('../images/sns.png');
+}
+
+.sns-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  display: block;
+  width: 362px;
+  margin-top: 30px;
+}
+
+.sns-list {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 362px;
+}
+
+.sns-list li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.sns-list li a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  z-index: 1;
+
+  transition: all 0.3s;
+}
+
+.sns-fb a {
+  background: url('../images/fb.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-fb a:hover {
+  background: url('../images/fb_w.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-insta a {
+  background: url('../images/insta.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-insta a:hover {
+  background: url('../images/insta_w.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-naver a {
+  background: url('../images/naver.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-naver a:hover {
+  background: url('../images/naver_w.png') no-repeat center;
+  background-size: 44%;
+}
+
+.sns-list li a:hover {
+  background-color: #000;
+}
+
+
 /* 푸터 */
-.footer{
-  
+.footer {
+  position: relative;
+  background-color: #000;
+}
+
+.footer .inner {
+  display: block;
+  padding: 140px 0;
+  padding-left: 44%;
+}
+
+.white {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  display: block;
+  line-height: 1.5;
+}
+
+.footer-menu {}
+
+.footer-menu li {}
+
+.footer-menu li a {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 7px;
+}
+.footer-menu li a::before{
+  content: '';
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.6s;
+}
+
+.footer-menu li a:hover::before{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.footer-richwood {
+  display: block;
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-top: 80px;
+}
+
+.footer-info {
+  margin: 17px 0;
+  display: none;
+}
+
+.footer-info span {
+  font-family: 'Montserrat';
+  color: #666;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.footer-info span a {
+  font-family: 'Montserrat';
+  color: #666;
+  font-size: 14px;
+  padding-right: 5px;
+  transition: color 0.5s;
+}
+
+.footer-info span a:hover {
+  color: #fff;
+}
+
+.footer-info span::after {
+  content: '';
+  display: inline-block;
+  height: 14px;
+  width: 1px;
+  background-color: #111;
+  margin-left: 10px;
+  vertical-align: -2px;
+}
+
+.footer-info span::after {}
+
+.footer-right {
+  margin: 40px 0px 5px 0px;
+}
+
+.footer-right li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer-right li a {
+  color: #999;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-right li::after {
+  content: '';
+  display: inline-block;
+  height: 14px;
+  width: 1px;
+  background-color: #111;
+  margin-left: 10px;
+  vertical-align: -2px;
+}
+
+.footer-right li:first-child a {
+  color: #fff;
+}
+
+.copy {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 13px;
+  color: #757575;
+  letter-spacing: 0.15px;
 }
