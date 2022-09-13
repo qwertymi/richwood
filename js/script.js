@@ -5,41 +5,49 @@ $(document).ready(function () {
 
   // 이전의 위치값 저장
   let rememberScY = $(window).scrollTop();
+
+
   $(window).scroll(function () {
     let temp = $(window).scrollTop();
     // 헤더 스크롤 크기변경
     if (temp > 0) {
       header.addClass('header-scroll');
+      submenu.css('top', '112px');
+      if (window.innerWidth <= 1250) {
+        submenu.css('top', '120px');
+      }
     } else {
       header.removeClass('header-scroll');
+      submenu.css('top', '130px');
+      if (window.innerWidth <= 1250) {
+        submenu.css('top', '120px');
+      }
     }
-
-    // // 현재 스크롤바의 위치 위치
-    // if (temp > 790) {
-
-    //   header.addClass('header-scroll-790');
-    //   if (temp > rememberScY) {
-    //     // console.log('아래로 화면 이동했다.')
-    //     //메뉴가 숨겨진다.
-    //     header.css('top', '-110px');
-    //   } else {
-    //     // console.log('위로 화면 이동했다.');
-    //     // 메뉴가 펼쳐진다.
-    //     header.css('top', '0px');
-    //   }
-
-    // } else {
-    //   header.removeClass('header-scroll-790');
-    //   header.removeAttr('style');
-    // }
-    // rememberScY = temp;
 
 
     // 메뉴 나타남
     new Waypoint({
       element: $('.notice'),
       handler: function (direction) {
-        if (direction == 'down') {
+        // 1250보다작을때
+        if (window.innerWidth <= 1250) {
+          if (direction == 'down') {
+            if (temp > rememberScY) {
+              header.css('top', '-110px');
+            } else if (window.innerWidth >= 930) {
+              header.css('top', '0px');
+              submenu.css('top', '120px');
+            }
+            rememberScY = temp;
+          } else if (direction == 'up') {
+            header.css('top', '0px');
+            header.addClass('header-scroll-790');
+            submenu.css('top', '120px');
+          }
+        }
+
+        // 1250보다 클때
+        else if (direction == 'down') {
           header.css('top', '-110px');
           header.addClass('header-scroll-790');
 
@@ -51,22 +59,30 @@ $(document).ready(function () {
             // console.log('위로 화면 이동했다.');
             // 메뉴가 펼쳐진다.
             header.css('top', '0px');
+            submenu.css('top', '112px');
+
           }
           rememberScY = temp;
 
         } else if (direction == 'up') {
           header.css('top', '0px');
           header.addClass('header-scroll-790');
+          submenu.css('top', '112px');
         }
       },
       offset: '0%'
     });
-
-
-
   });
 
 
+  // 1250 반응형
+  $(window).resize(function () {
+    if (window.innerWidth <= 1250) {
+      submenu.css('top', '120px');
+    } else {
+      submenu.css('top', '130px');
+    }
+  })
 
   // 메인비주얼 슬라이드
   let visualSlideTime = [15000, 6000, 6000, 6000];
@@ -74,8 +90,6 @@ $(document).ready(function () {
   let visualSlideTotal = visualSlideTime.length;
 
   let visualSlideVideo = $('#videoV').get(0);
-  console.log(visualSlideVideo);
-  // console.log(visualSlideVideo.duration);
 
   // 비디오 실행하기
   visualSlideVideo.currentTime = 0;
@@ -86,10 +100,6 @@ $(document).ready(function () {
   let swVisual = new Swiper('.sw-visual', {
     spaceBetween: 30,
     effect: "fade",
-    // loop: true,
-    // autoplay: {
-    //   // delay: 5000,
-    //   // disableOnInteraction: false },
     pagination: {
       el: ".vs-pg",
       clickable: true,
@@ -117,21 +127,15 @@ $(document).ready(function () {
       }
 
     }
-
-    // 해당 번호로 슬라이드를 강제로 이동시킨다.
-    // 현재 loop 가 false 라서 그냥 숫자를 넘겨도 된다.
-    // 카페 글 참조.
     swVisual.slideTo(visualSlideNow);
-    // console.log(visualSlideNow)
 
     if (visualSlideNow == 0) {
-      // 비디오 실행하기
       visualSlideVideo.pause();
       visualSlideVideo.currentTime = 0;
       visualSlideVideo.play();
     }
 
-    // 시간을 다시 셋팅하고 타이머를 만든다.
+    // 시간을 다시 셋팅, 타이머를 만든다.
     clearInterval(visualTimer);
     visualTimer = setInterval(function () {
       goVisual();
@@ -213,6 +217,7 @@ $(document).ready(function () {
 
   $('body').click(function () {
     searchBoxList.hide();
+    searchAr.removeClass('search-cate-ar-rot');
   });
 
   // 검색 선택한 카테고리 표시
@@ -231,6 +236,9 @@ $(document).ready(function () {
         $('.search-cata-list').removeClass('search-cata-list-up');
       } else if (direction == 'up') {
         $('.search-cata-list').addClass('search-cata-list-up');
+        if (window.innerWidth <= 1560) {
+          $('.search-cata-list').removeClass('search-cata-list-up');
+        }
       }
     },
     offset: '40%'
@@ -246,11 +254,12 @@ $(document).ready(function () {
     footerAr.toggleClass('footer-richwood-ar-rot');
   });
 
+
 });
 
 // 뉴스 말줄임(...)
 window.onload = function () {
   AOS.init();
-  $(".news-box-title").dotdotdot();
-  $(".news-box-txt").dotdotdot();
+
+
 };
