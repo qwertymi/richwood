@@ -1,5 +1,43 @@
 $(document).ready(function () {
 
+
+  $("html").css("overflow", "hidden");
+
+  let modalWrap = $(".modal-wrap");
+  let modalClose = $(".modal-close");
+  let modalOpen = $(".modalopen");
+  let modalCloseFn = () => {
+    modalWrap.stop().fadeOut(200);
+    $("html").css("overflow", "auto");
+    modalOpen.show();
+  };
+
+  modalOpen.hide();
+  modalClose.click(function () {
+    modalCloseFn();
+  });
+  $("html").keydown(function (key) {
+    if (key.keyCode) {
+      modalCloseFn();
+    }
+  });
+
+  let modalMain = $(".modal-main");
+  modalMain.click(function (event) {
+    event.stopPropagation();
+  });
+  modalWrap.click(function () {
+    modalCloseFn();
+  });
+
+  modalOpen.click(function () {
+    modalWrap.stop().fadeIn(200);
+    $("html").css("overflow", "hidden");
+    modalOpen.hide();
+  });
+
+
+
   let header = $('.header');
   let submenu = $('.submenu');
 

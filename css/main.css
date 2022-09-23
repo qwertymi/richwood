@@ -1,5 +1,9 @@
 @charset 'utf-8';
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@font-face {
+  font-family: 'modal-font';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+}
 
 * {
   margin: 0;
@@ -37,6 +41,124 @@ body {
 
   overflow-x: hidden;
 }
+
+
+/* modal */
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+
+}
+
+.modal-main {
+  font-family: 'modal-font';
+  letter-spacing: -0.3px;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 280px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.modal-main h1 {
+  font-size: 55px;
+  font-weight: 500;
+  text-align: center;
+  color: #6e84ff;
+  padding: 9px 0 18px 0;
+}
+
+.modal-main span {
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  line-height: 27px;
+}
+
+.modal-main p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #111;
+  padding-top: 30px;
+}
+
+.modal-main b {
+  font-weight: 600;
+  color: #6e84ff;
+}
+
+.modal-main a {
+  color: #6e84ff;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  border: 0px;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: transparent;
+  color: #999;
+  transition: transform 0.3s;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg);
+}
+
+
+.modalopen {
+  font-family: 'modal-font';
+  font-size: 15px;
+  position: fixed;
+  display: block;
+  left: 20px;
+  bottom: 20px;
+  z-index: 99999;
+}
+
+.modalopen button {
+  font-size: 55px;
+  font-weight: 500;
+  color: #6e84ff;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modalopen span {
+  color: rgba(110, 132, 255, 0);
+  display: block;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 3px 5px 3px 5px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 86px;
+  left: 12px;
+  line-height: 20px;
+  transition: all 0.2s;
+}
+
+.modalopen:hover span {
+  color: rgba(110, 132, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+/* //modal */
+
 
 /* 공통 */
 .clearfix::after {

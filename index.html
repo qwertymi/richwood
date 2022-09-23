@@ -36,7 +36,10 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <link rel="stylesheet" href="js/swiper/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
   <script src="js/swiper/swiper.min.js"></script>
@@ -54,6 +57,29 @@
 </head>
 
 <body>
+
+    <!-- 안내 -->
+  <div class="modal-wrap">
+    <div class="modal-main">
+      <h1><i class="fas fa-exclamation-circle"></i></h1>
+      <span>이 사이트는 <b>스터디용으로 제작</b>되었으며,<br> <b>리소스의 저작권은 원저작자</b>에게 있습니다.</span>
+      <p>
+        * 해당 사이트와 관련한 문제가 있으면 
+        <a href="mailto:kimhp1216@naver.com?subject=안녕하세요.">
+          여기</a>로 연락바랍니다.<br>
+        * 본 사이트는 Chrome 에 최적화되어 있습니다.
+      </p>
+      <button class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <div class="modalopen">
+  <button><i class="fas fa-exclamation-circle"></i></button>
+  <span>안내창보기</span>
+  </div>
+
+
   <div class="wrap">
 
     <!-- 헤더 -->
