@@ -1,8 +1,9 @@
 @charset 'utf-8';
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @font-face {
-  font-family: 'modal-font';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-family: "modal-font";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
+    format("woff2");
 }
 
 * {
@@ -42,7 +43,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* modal */
 .modal-wrap {
   position: fixed;
@@ -52,11 +52,10 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 99999;
-
 }
 
 .modal-main {
-  font-family: 'modal-font';
+  font-family: "modal-font";
   letter-spacing: -0.3px;
   position: absolute;
   left: 50%;
@@ -120,9 +119,8 @@ body {
   transform: rotate(90deg);
 }
 
-
 .modalopen {
-  font-family: 'modal-font';
+  font-family: "modal-font";
   font-size: 15px;
   position: fixed;
   display: block;
@@ -158,7 +156,6 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 /* //modal */
-
 
 /* 공통 */
 .clearfix::after {
@@ -1058,6 +1055,30 @@ body {
     width: 67%;
   }
 }
+@media screen and (max-width: 465px) {
+  .notice .inner {
+    padding: 70px 0;
+  }
+  .title {
+    font-size: 36px;
+    padding-bottom: 40px;
+  }
+  .notice-swiper-control {
+    top: 37%;
+    right: 0;
+  }
+  .notice-pg {
+    font-size: 20px;
+  }
+  .notice-box-txt p {
+    width: 63%;
+    margin-left: 10%;
+  }
+  .notice-box-txt span,
+  .notice-box-txt p {
+    font-size: 17px;
+  }
+}
 
 /* 회사사업 */
 .business {
@@ -1464,6 +1485,21 @@ body {
     font-size: 2.1rem;
   }
 }
+@media screen and (max-width: 465px) {
+  .business {
+    padding: 70px 0;
+  }
+  .bs-title {
+    font-size: 41px;
+    margin-right: 18px;
+  }
+  .bs-1 .bs-innertxt {
+    width: 169px;
+    bottom: 60px;
+    left: 21px;
+    font-size: 19px;
+  }
+}
 
 /* 제품검색 */
 .search {
@@ -1707,6 +1743,23 @@ body {
   .search-hashtag li {
     line-height: 20px;
     margin-right: 12px;
+  }
+}
+@media screen and (max-width: 465px) {
+  .search .inner {
+    padding: 70px 0;
+  }
+  .search-hashtag {
+    display: none;
+  }
+  .search-cate {
+    width: 120px;
+  }
+  .search-cate-input {
+    width: calc(98% - 123px);
+  }
+  .search-cate-submit {
+    width: 55px;
   }
 }
 
@@ -1981,6 +2034,18 @@ body {
   .sns-list {
     width: 361px;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 465px) {
+  .news-more {
+    right: 4px;
+  }
+  .title-en {
+    font-size: 41px;
+  }
+  .sns-round {
+    height: 250px;
+    width: 250px;
   }
 }
 
